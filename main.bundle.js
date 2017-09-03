@@ -157,9 +157,9 @@
 	  useNextLife(ball) {
 	    newLifeButton.innerHTML = `
 	      <div id="lost-life-modal" class="animate2 fadeIn">
-	          <h2 class="lost-life">DEATH!</h2>
-	          <p class="lost-life-text">You are running low on lives - just ${this.livesRemaining} left!
-	          Click the button to continue on to your next life.</p>
+	          <h2 class="lost-life">OOPS!</h2>
+	          <p class="lost-life-text">You are running low on chances to save the hedgie - just ${this.livesRemaining} left!
+	          Click the button to continue on to your next chance.</p>
 	          <button id="continue-to-next-life">Continue</button>
 	      </div>`;
 	    this.nextLife(ball);
@@ -169,7 +169,7 @@
 	    newLifeButton.innerHTML = `
 	    <div id="lost-game-modal" class="animate2 fadeIn">
 	        <h2 class="lost-life">GAME OVER</h2>
-	        <p class="game-over-text">You are dead. But you did score ${this.points} points!</p>
+	        <p class="game-over-text">You will have to let the next person try to save the hedgie. But you did score ${this.points} points!</p>
 	        <button id="play-again">Play Again</button>
 	    </div>`;
 	    currentLevelInfoBar.innerHTML = `Current Level: 1`;
@@ -233,8 +233,8 @@
 
 	  levelUpDom() {
 	    let levelUpAppend = `<div id="level-up-modal" class="animate2 fadeIn">
-	        <h2 class="level-up">NICE!</h2>
-	        <p class="level-up-text">On to the next challenge! Click the button to start level ${this.currentLevel}.</p>
+	        <h2 class="level-up">YOU'RE A HERO!</h2>
+	        <p class="level-up-text">You are one step closer to saving the hedgie! Click the button to start level ${this.currentLevel}.</p>
 	        <button id="continue-to-next-level">Continue</button>
 	        </div>`;
 
@@ -295,8 +295,8 @@
 	  gameWonDom(ball) {
 	    let wonGameAppend = `
 	      <div id="you-won-modal" class="animate2 fadeIn">
-	          <h2 class="level-up">YOU WON!!!</h2>
-	          <p class="you-won-text">We didn't think this was possible. You earned ${this.points} points!</p>
+	          <h2 class="level-up">YOU DID IT!!!</h2>
+	          <p class="you-won-text">The hedgie has safely returned home. You earned ${this.points} points!</p>
 	          <button id="play-again">Play Again</button>
 	      </div>`;
 

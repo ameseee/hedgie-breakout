@@ -4,33 +4,27 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
     <link rel="stylesheet" href="./lib/styles.css">
-    <title>Space Blox</title>
+    <title>Save the Hedgie</title>
   </head>
   <body>
-    <main id="container">
 
       <section id="directions-modal" class="animate fadeIn">
-        <h1 class="space-blox">Space Blox</h1>
+        <h1 class="space-blox">Save the Hedgie</h1>
         <p class="directions-text">The goal of the game is to break all the (breakable) blocks on the screen. Blocks can be broken by colliding with the ball. Some more things to know before you play:</p>
         <ul>
           <li class="directions-li">Hitting each breakable block earns you 10 points.</li>
-          <li class="directions-li">You have three lives, but each time you lose one you lose 50 points.</li>
+          <li class="directions-li">You have three chances, but each time you let the ball drop below the screen, you lose 50 points.</li>
           <li class="directions-li">There are four levels to beat!</li>
           <li class="directions-li">Use the mouse OR the left/right arrow keys to control the paddle.</li>
-          <li class="directions-li">Each level has two powerups. Break a green block to earn 25 points and unlock a powerup. Catch the powerup to earn 25 additional points, and activate a random powerup (fast or slow ball, long or short paddle).</li>
+          <li class="directions-li">Each level has 1-3 powerups. Break a red block to earn 25 points and unlock a powerup. Catch the powerup to earn 25 additional points, and activate a random powerup (fast or slow ball, long or short paddle).</li>
           <li class="directions-li">Grey, UNBREAKABLE, blocks will start appearing in Level 2. Hitting them earns NO points.</li>
         </ul>
         <p class="directions-text">Think you're ready to play? Click the button below, then launch the ball with a <strong>mouse click</strong>.</p>
         <button id="start-btn" type="button" name="button">Ready to Play</button>
       </section>
 
-      <aside class="canvas-container">
-        <canvas id="canvas" class="animate-canvas fadeIn" width="500" height="500"></canvas>
-      </aside>
+      <canvas id="canvas" class="animate-canvas fadeIn" width="500" height="500"></canvas>
 
-    </main>
-
-    <aside id="info-bar-container">
       <section id="info-bar" class="animate-canvas fadeIn">
         <aside id="current-level">
           <p>Current Level: 1</p>
@@ -42,7 +36,6 @@
           <p>Lives Left: </p>
         </aside>
       </section>
-    </aside>
 
     <section id="audio-section">
       <audio src="./lib/sounds/spots.mp3" autoplay loop>
