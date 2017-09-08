@@ -6,11 +6,7 @@
 }
 
 body {
-  background-image: url(assets/hedgie.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-clip: border-box;
+  background-image: url(assets/puercoespin.jpg);
   position: relative;
 }
 
@@ -22,7 +18,7 @@ main {
 }
 
 #canvas {
-  display: block;
+  /*display: block;*/
   display: none;
   position: absolute;
   top: 0px;

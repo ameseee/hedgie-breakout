@@ -158,8 +158,8 @@
 	    newLifeButton.innerHTML = `
 	      <div id="lost-life-modal" class="animate2 fadeIn">
 	          <h2 class="lost-life">OOPS!</h2>
-	          <p class="lost-life-text">You are running low on chances to save the hedgie - just ${this.livesRemaining} left!
-	          Click the button to continue on to your next chance.</p>
+	          <p class="lost-life-text">You are running low on chances to save the hedgie - just ${this.livesRemaining} left!</p>
+	          <p class="lost-life-text" id="p2">Click the button to continue on to your next chance.</p>
 	          <button id="continue-to-next-life">Continue</button>
 	      </div>`;
 	    this.nextLife(ball);
@@ -234,7 +234,8 @@
 	  levelUpDom() {
 	    let levelUpAppend = `<div id="level-up-modal" class="animate2 fadeIn">
 	        <h2 class="level-up">YOU'RE A HERO!</h2>
-	        <p class="level-up-text">You are one step closer to saving the hedgie! Click the button to start level ${this.currentLevel}.</p>
+	        <p class="level-up-text">You are one step closer to saving the hedgie!</p>
+	        <p class="level-up-text" id="p2">Click the button to start level ${this.currentLevel}.</p>
 	        <button id="continue-to-next-level">Continue</button>
 	        </div>`;
 
@@ -350,12 +351,12 @@
 
 	  draw(context) {
 	    if (this.special === true) {
-	      context.fillStyle = '#99ff66';
+	      context.fillStyle = '#f1544f';
 	      context.fillRect(this.x, this.y, this.width, this.height);
-	      this.buildTrapezoid(context, this.x, this.y, this.x + 2, this.y + 2, this.x + 2, this.y + 8, this.x, this.y + 10, '#84e155');
-	      this.buildTrapezoid(context, this.x + 48, this.y + 2, this.x + 50, this.y, this.x + 50, this.y + 10, this.x + 48, this.y + 8, '#84e155');
-	      this.buildTrapezoid(context, this.x, this.y, this.x + 50, this.y, this.x + 48, this.y + 2, this.x + 2, this.y + 2, '#66a547');
-	      this.buildTrapezoid(context, this.x + 2, this.y + 8, this.x + 48, this.y + 8, this.x + 50, this.y + 10, this.x, this.y + 10, '#66a547');
+	      this.buildTrapezoid(context, this.x, this.y, this.x + 2, this.y + 2, this.x + 2, this.y + 8, this.x, this.y + 10, '#D34A45');
+	      this.buildTrapezoid(context, this.x + 48, this.y + 2, this.x + 50, this.y, this.x + 50, this.y + 10, this.x + 48, this.y + 8, '#D34A45');
+	      this.buildTrapezoid(context, this.x, this.y, this.x + 50, this.y, this.x + 48, this.y + 2, this.x + 2, this.y + 2, '#973531');
+	      this.buildTrapezoid(context, this.x + 2, this.y + 8, this.x + 48, this.y + 8, this.x + 50, this.y + 10, this.x, this.y + 10, '#973531');
 	    } else if (this.unbreakable === true) {
 	      context.fillStyle = '#efecf0';
 	      context.fillRect(this.x, this.y, this.width, this.height);
@@ -364,12 +365,12 @@
 	      this.buildTrapezoid(context, this.x, this.y, this.x + 50, this.y, this.x + 48, this.y + 2, this.x + 2, this.y + 2, '#a5a3a5');
 	      this.buildTrapezoid(context, this.x + 2, this.y + 8, this.x + 48, this.y + 8, this.x + 50, this.y + 10, this.x, this.y + 10, '#a5a3a5');
 	    } else {
-	      context.fillStyle = '#fa47c9';
+	      context.fillStyle = '#4fecf1';
 	      context.fillRect(this.x, this.y, this.width, this.height);
-	      this.buildTrapezoid(context, this.x, this.y, this.x + 2, this.y + 2, this.x + 2, this.y + 8, this.x, this.y + 10, '#fa39c5');
-	      this.buildTrapezoid(context, this.x + 48, this.y + 2, this.x + 50, this.y, this.x + 50, this.y + 10, this.x + 48, this.y + 8, '#fa39c5');
-	      this.buildTrapezoid(context, this.x, this.y, this.x + 50, this.y, this.x + 48, this.y + 2, this.x + 2, this.y + 2, '#ab318b');
-	      this.buildTrapezoid(context, this.x + 2, this.y + 8, this.x + 48, this.y + 8, this.x + 50, this.y + 10, this.x, this.y + 10, '#ab318b');
+	      this.buildTrapezoid(context, this.x, this.y, this.x + 2, this.y + 2, this.x + 2, this.y + 8, this.x, this.y + 10, '#45CFD3');
+	      this.buildTrapezoid(context, this.x + 48, this.y + 2, this.x + 50, this.y, this.x + 50, this.y + 10, this.x + 48, this.y + 8, '#45CFD3');
+	      this.buildTrapezoid(context, this.x, this.y, this.x + 50, this.y, this.x + 48, this.y + 2, this.x + 2, this.y + 2, '#319397');
+	      this.buildTrapezoid(context, this.x + 2, this.y + 8, this.x + 48, this.y + 8, this.x + 50, this.y + 10, this.x, this.y + 10, '#319397');
 	    }
 	  }
 
@@ -406,7 +407,7 @@
 	      levelOneArray.push(new Block(this.x, this.y));
 	    }
 
-	    levelOneArray = this.randomSpecialBlocks(levelOneArray, 3);
+	    levelOneArray = this.randomSpecialBlocks(levelOneArray, 1);
 	    return levelOneArray;
 	  }
 
@@ -439,7 +440,7 @@
 	      }
 	    }
 
-	    levelTwoArray = this.randomSpecialBlocks(levelTwoArray, 5);
+	    levelTwoArray = this.randomSpecialBlocks(levelTwoArray, 2);
 	    return levelTwoArray;
 	  }
 
@@ -503,32 +504,18 @@
 	    }
 
 	    for (let i = 0; i < 12; i++) {
-	      if (i === 3 || i === 11) {
-	        this.unbreakable = true;
-	        this.x = 6.25 + i % 3 * 50 * 1.25;
-	        this.y = 172 + (6 + i % 4 * 10 * 2);
-	        levelFourArray.push(new Block(this.x, this.y, false, this.unbreakable));
-	      } else {
-	        this.x = 6.25 + i % 3 * 50 * 1.25;
-	        this.y = 172 + (6 + i % 4 * 10 * 2);
-	        levelFourArray.push(new Block(this.x, this.y));
-	      }
+	      this.x = 6.25 + i % 3 * 50 * 1.25;
+	      this.y = 172 + (6 + i % 4 * 10 * 2);
+	      levelFourArray.push(new Block(this.x, this.y));
 	    }
 
 	    for (let i = 0; i < 12; i++) {
-	      if (i === 3 || i === 11) {
-	        this.unbreakable = true;
-	        this.x = 312.5 + (6.25 + i % 3 * 50 * 1.25);
-	        this.y = 172 + (6 + i % 4 * 10 * 2);
-	        levelFourArray.push(new Block(this.x, this.y, false, this.unbreakable));
-	      } else {
-	        this.x = 312.5 + (6.25 + i % 3 * 50 * 1.25);
-	        this.y = 172 + (6 + i % 4 * 10 * 2);
-	        levelFourArray.push(new Block(this.x, this.y));
-	      }
+	      this.x = 312.5 + (6.25 + i % 3 * 50 * 1.25);
+	      this.y = 172 + (6 + i % 4 * 10 * 2);
+	      levelFourArray.push(new Block(this.x, this.y));
 	    }
 
-	    levelFourArray = this.randomSpecialBlocks(levelFourArray, 12);
+	    levelFourArray = this.randomSpecialBlocks(levelFourArray, 2);
 	    return levelFourArray;
 	  }
 
@@ -604,8 +591,8 @@
 
 	  draw(context) {
 	    this.y += this.moveY;
-	    context.fillStyle = '#00ffff';
-	    context.strokeStyle = '#00ffff';
+	    context.fillStyle = '#9bf14f';
+	    context.strokeStyle = '#9bf14f';
 	    context.lineJoin = 'round';
 	    context.lineWidth = 5;
 	    context.strokeRect(this.x + this.radius / 2, this.y + this.radius / 2, this.width - this.radius, this.height - this.radius);
@@ -613,7 +600,7 @@
 	    context.font = '10px Ubuntu';
 	    context.textAlign = 'center';
 	    context.textBaseline = 'middle';
-	    context.fillStyle = '#ff6600';
+	    context.fillStyle = '#000';
 	    context.fillText('P', this.x + 15, this.y + 6);
 	  }
 
@@ -625,7 +612,7 @@
 	        game.points += 25;
 	        block.updatePointsInfoBar(game);
 	        this.chooseRandomPowerup(ball, paddle);
-	        document.getElementById('powerup-paddle').volume = .1;
+	        document.getElementById('powerup-paddle').volume = 0.1;
 	        document.getElementById('powerup-paddle').play();
 	      }
 	    }
@@ -640,58 +627,14 @@
 	  chooseRandomPowerup(ball, paddle) {
 	    let rollDice = Math.random();
 
-	    if (rollDice <= .25) {
-	      if (paddle.width === 50) {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Short Paddle';
-	        return paddle.shortPaddle();
-	      } else {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Long Paddle';
-	        return paddle.resetPaddle();
-	      }
-	    } else if (rollDice > .25 && rollDice <= .5) {
-	      if (paddle.width === 50) {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Long Paddle';
-	        return paddle.longPaddle();
-	      } else {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Short Paddle';
-	        return paddle.resetPaddle();
-	      }
-	    } else if (rollDice > .5 && rollDice <= .75) {
-	      if (ball.moveY >= 1 || ball.moveY <= -1) {
-	        if (ball.moveX >= 1 || ball.moveX <= -1) {
-	          this.currentPowerupAlpha = 1;
-	          this.currentPowerup = 'Slow Ball';
-	          return ball.slowBall();
-	        } else {
-	          this.currentPowerupAlpha = 1;
-	          this.currentPowerup = 'Fast Ball';
-	          return ball.fastBall();
-	        }
-	      } else {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Fast Ball';
-	        return ball.fastBall();
-	      }
-	    } else {
-	      if (ball.moveY <= 6 || ball.moveY >= -6) {
-	        if (ball.moveX <= 6 || ball.moveX >= -6) {
-	          this.currentPowerupAlpha = 1;
-	          this.currentPowerup = 'Fast Ball';
-	          return ball.fastBall();
-	        } else {
-	          this.currentPowerupAlpha = 1;
-	          this.currentPowerup = 'Slow Ball';
-	          return ball.slowBall();
-	        }
-	      } else {
-	        this.currentPowerupAlpha = 1;
-	        this.currentPowerup = 'Slow Ball';
-	        return ball.slowBall();
-	      }
+	    if (rollDice <= 0.5) {
+	      this.currentPowerupAlpha = 1;
+	      this.currentPowerup = 'Long Paddle';
+	      return paddle.resetPaddle();
+	    } else if (rollDice > 0.5 && rollDice <= 1) {
+	      this.currentPowerupAlpha = 1;
+	      this.currentPowerup = 'Slow Ball';
+	      return ball.slowBall();
 	    }
 	  }
 
@@ -702,7 +645,7 @@
 	    context.textAlign = 'center';
 	    context.textBaseline = 'middle';
 	    this.currentPowerupAlpha -= decrementer;
-	    context.fillStyle = `rgba(204, 255 , 0, ${this.currentPowerupAlpha})`;
+	    context.fillStyle = `rgba(155, 241, 79, ${this.currentPowerupAlpha})`;
 	    context.fillText(this.currentPowerup, 250, 375);
 	  }
 
@@ -740,7 +683,7 @@
 	  }
 
 	  draw(context) {
-	    context.fillStyle = '#33ccff';
+	    context.fillStyle = '#a54ff1';
 	    context.fillRect(this.x, this.y, this.width, this.height);
 	  }
 
@@ -802,7 +745,7 @@
 	  draw(context, paddle) {
 	    context.beginPath();
 	    context.arc(this.x, this.y, 6, 0, Math.PI * 2);
-	    context.fillStyle = '#fff200';
+	    context.fillStyle = '#fff';
 	    context.fill();
 	    context.closePath();
 	    if (this.moveX === 0) {
@@ -894,10 +837,10 @@
 	    this.moveY /= 2;
 	  }
 
-	  fastBall() {
-	    this.moveX *= 2;
-	    this.moveY *= 2;
-	  }
+	  // fastBall() {
+	  //   this.moveX *= 2;
+	  //   this.moveY *= 2;
+	  // }
 
 	}
 
